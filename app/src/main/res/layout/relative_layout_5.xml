@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/view1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:background="#FFB800" />
+
+
+    <TextView
+        android:id="@+id/view2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/view1"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:background="#3052FF" />
+
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/view2"
+        android:layout_toLeftOf="@id/view2"
+        android:layout_above="@+id/view1"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:background="#78FF7A" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/view2"
+        android:layout_toRightOf="@id/view2"
+        android:layout_above="@+id/view1"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:background="#F137EE" />
+
+
+    <TextView
+
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@id/view1"
+        android:layout_toLeftOf="@+id/view1"
+        android:background="#B535FA" />
+
+    <TextView
+        android:layout_alignTop="@id/view1"
+        android:layout_toRightOf="@+id/view1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#FF2525" />
+
+
+    <TextView
+        android:id="@+id/view5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/view1"
+        android:layout_centerInParent="true"
+        android:background="#5CF31C" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/view5"
+        android:layout_toLeftOf="@id/view2"
+        android:layout_below="@+id/view1"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:background="#808E9F" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/view5"
+        android:layout_toRightOf="@id/view2"
+        android:layout_below="@+id/view1"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:background="#B5E5F8" />
+
+
+</RelativeLayout>

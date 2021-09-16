@@ -1,0 +1,182 @@
+day01(09/15)
+
+김근호 
+
+플러터
+
+
+그날배운거 블로그로 만드세요.
+
+
+모두가할수있는 UI
+
+
+
+안드로이드 리눅스 기반
+프레임워크
+
+
+라이브러리/
+실행의 흐름을 제어하는거 
+
+
+프레임워크/
+정해진 실행의 흐름에 따라 하나의 프로그램을 만들어줄수 있음.
+
+클래스 다이어그램
+https://blog.naver.com/devnote1
+상속은 실선
+인터페이스는 점선
+추상클래스는 이탤릭체
+
+
+객체 :
+상태와 행위를 가질수있는것들.
+사자 고양이 개 , 먹고 ,달리고 체중, 털 등등
+
+-> 동물은 객체가 아님 
+
+
+컴파일:
+사람이 입력한 코드를 기계어로 번역하는과정
+
+
+
+객체지향 패러다임
+객체와 객체간의 상태, 객체와 객체간의 관계 중심
+
+패키지 
+폴더지만 개발도구에서 다룰떈 패키지라 부르는거임.
+
+기본 7.0(누가)
+
+C:\Users\82109\AndroidStudioProjects \MyApplication
+
+
+안드로이드 docs
+https://developer.android.com/training/basics/firstapp
+
+
+개발자도구 들어가기
+buildnumer 5번클릭
+
+단축키
+run shift f10 
+코드 정렬 ctrl alt l 
+
+
+protected 상속받은것만 접근가능함.
+
+java main 함수
+프로그램이 시작될때 가장먼저 시작되는 함수(코드의 시작점)
+
+
+LinearLayout 속성 중..
+android:orientation="horizontal" 자식 요소를 수평으로 정렬
+android:orientation="vertical" 수직으로 정렬
+android:gravity="right"    //float 이랑 같은개념
+android:layout_gravity="center"   // layout_붙은게 우선순위로 적용
+    layout_weight : 비율
+    match_parent : 부모요소 크기맞춤
+    wrap_content : 콘텐츠 크기에 맞춤
+
+@상대경로/절대경로 같은 개념
+
+
+==================================================
+안드로이드에서 화면을 그리는 방법
+
+XML을 이용한다.
+DSL Language -> 범주(Domain), 특화(specific
+안드로이드 UI를 그리기 위해 특화된 언어이다.
+
+핸드폰마다 화면크기가 다 다른데 어떻게 화면을 그려야 할까?
+
+픽셀, dpi, dp --> 단위
+
+픽셀 -> 핸드폰 화면에서 빛이 나오는 전구 -> 가장 작은 단위
+//고해상도란 ? 정해진 범위 안에어 전구가 많이 있다는 얘기이다.
+//dpi -> dot per inch 1인치(2.54cm)
+
+스마트폰 기준 dpi
+ldpi : 120(1인치당 120pixel이 들어감)
+mdpi : 160
+hdpi : 240
+xhdpi : 360(1 ,360pixel , 자주씀)
+xxhdpi : 480
+xxxhdpi : 640
+
+ui를 통일 시켜 주어야 한다.
+어느 기종에서나 우리가 원하는 ui모양, 크기가 나올수 있도록 만들어 주어야 한다.
+
+dp -> density Independent Pixel
+--> 픽셀에 독립적인 단위
+--> dp라는 단위를 사용하면 다양한 해상도의 핸드폰에서 동일 크기로 보이게 된다.
+--> 안드로이드에서 주로 사용하게 되는 단위
+
+
+SP , dp
+텍스트 Size는 sp를 사용하기도함.
+(어르신 글자 사이즈 이런것들 ..)
+
+
+==================================================
+Day2
+
+https://github.com/insertvalue2 안드로이드 예제 여기서 보시던데 ?
+
+버튼  //쪼갤수도있고 등등함
+백그라운드 tint 씀
+
+
+
+android:weightSum="5" 리니어 레이아웃크기를 5라고 하고 안에있는요소들의 값을 layout_weight에 비율만큼 나눠서 값줌
+
+
+	
+RelativeLayout.. 속성중
+
+Relative Layout 
+android:layout_centerInParent="true" 중앙으로
+
+android:layout_above="@+id/view5" 기준 위쪽으로 배치
+android:layout_below="@+id/view5" 기준 아래쪽으로 배치
+
+android:layout_toRightOf="@+id/view5" 기준 오른쪽으로 배치
+
+텍스트 가운데정렬
+        android:gravity="center"
+        android:text="안녕하세요"
+        android:textAlignment="center"
+
+
+하드코딩 : 각 문자열마다 변수를 지정해주는것(?)
+타겟 누르고 보면 String.xml에 변수처럼 지정된거있음
+
+
+
+레이아웃 더 배울거
+프레임
+업세인트
+
+
+-------------------------------
+클래스 다이어그램 
+
++ pulbic
+- private
+아무것도없으면 default
+
+
+객체는 상태와 행위가 중요합니다. 즉 클래스와 메서드
+
+자바프로그램이 실행되면 
+main 함수가 실행됨 따라서 코드의 시작점이다.
+
+main 설명 
+함수를 실행시키면
+jvm 동적메모리 할당중 
+heap메모리 영역에 new로 생성시킨 인스턴스들이 할당됨.
+
+
+-------------------------------

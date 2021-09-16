@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="right"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="left"
+        android:background="#bd6464"
+        android:text="안녕하세요" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#e7bf27"
+        android:text="반갑습니다" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="#bd6464"
+        android:text="안녕하세요" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#e7bf27"
+        android:text="반갑습니다" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#bd6464"
+        android:text="안녕하세요" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#e7bf27"
+        android:text="반갑습니다" />
+
+</LinearLayout>

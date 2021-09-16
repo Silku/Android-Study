@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+        Relative Layout이란?
+        자식 뷰 위젯들이 배치 될때 서로간의 상대적위치 관계에 따라
+        최종적으로 표시될 영역을 결저하도록 만드는 레이아웃입니다.
+
+        기준잡는 방법 2가지
+        1. 부모 위젯인 RelativeLayout 기준으로 상대적 위치를 잡는방법
+        2. 자식뷰 위젯간 상대적 위치
+    -->
+    <TextView
+        android:layout_centerInParent="true"
+        android:background="#f44336"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <TextView
+        android:layout_alignParentLeft="true"
+        android:background="#004336"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+    <TextView
+        android:layout_alignParentRight="true"
+        android:background="#0077FF"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+    <TextView
+        android:layout_alignParentBottom="true"
+        android:background="#00bbFF"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <TextView
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="#bb44FF"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+
+
+</RelativeLayout>

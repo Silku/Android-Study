@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+    LinearLayout 속성 중..
+    android:orientation="horizontal" 자식 요소를 수평으로 정렬
+    android:orientation="vertical" 수직으로 정렬
+    android:gravity="right"    //float 이랑 같은개념
+    android:layout_gravity="center"   // layout_붙은게 우선순위로 적용
+    layout_weight : 비율
+    match_parent : 부모요소 크기맞춤
+    wrap_content : 콘텐츠 크기에 맞춤
+    -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <TextView
+            android:layout_weight="3"
+            android:background="#932c2c"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+        <TextView
+            android:layout_weight="1"
+            android:background="#2c6c32"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+        <TextView
+            android:layout_weight="1"
+            android:background="#165eaa"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <TextView
+            android:layout_weight="1"
+            android:background="#cf8a8a"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+        <TextView
+            android:layout_weight="1"
+            android:background="#F825FF"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+        <TextView
+            android:layout_weight="1"
+            android:background="#78A6D8"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <TextView
+            android:layout_weight="1"
+            android:background="#6AFF79"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+        <TextView
+            android:layout_weight="1"
+            android:background="#E8C55B"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+        <TextView
+            android:layout_weight="1"
+            android:background="#FA9033"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+    </LinearLayout>
+</LinearLayout>

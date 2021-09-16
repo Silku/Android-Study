@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:weightSum="5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/black" />
+
+        <TextView
+            android:layout_weight="3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/purple_700" />
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#ff11ff" />
+    </LinearLayout>
+
+
+    <!--아래는
+        양옆은 100dp주고 나머지 가운데는 100%크기 주는 방법
+    -->
+    <LinearLayout
+
+        android:weightSum="5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/black" />
+
+        <TextView
+            android:layout_weight="5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/purple_700" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#ff11ff" />
+
+    </LinearLayout>
+</LinearLayout>
