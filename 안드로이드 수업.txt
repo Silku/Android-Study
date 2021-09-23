@@ -1,6 +1,7 @@
 day01(09/15)
 
 김근호 
+010 5277 0535 
 
 플러터
 
@@ -180,3 +181,55 @@ heap메모리 영역에 new로 생성시킨 인스턴스들이 할당됨.
 
 
 -------------------------------
+
+
+
+============================================
+day3
+Frame layout
+우측 하단 Layout inspector 버튼
+--> 3d로 프레임레이아웃 겹친 형태를 볼수있음
+
+
+layout gravity =center 부모를기준으로 가우네정렬
+
+
+plugins
+--> 작업창에서 shift 2번
+android-drawable-importer-intellij-plugin-0.5-81
+지원안해서 
+android drawable importer plugin not found
+stackoverflow에있는 걸 다운받아서 해결
+
+Desktop\MyApplication\app\src\main\res
+아래경로에 해상도별 이미지파일같은거 세팅해주는거임 원래.
+(hdpi , mdpi, xhdpi , xxhdpi, xxxhdpi 폴더)
+
+drawable-v24
+이폴더는 벡터이미지 넣는 폴더
+
+
+Imageview
+android:scaleType="center" 그냥 가운데로
+android:scaleType="centerCrop" 넘치는 부분을 잘르면서 크기 맞춤 "중요, 자주씀"
+android:scaleType="fitEnd" 사이즈 끝에 맞추기
+
+
+
+        xml언어는 문법적으로 느슨한 언어이기 떄문에 오류찾기가 쉽지 않을 수 있다
+
+        1. scrollView -> 오직 하나의 자식 뷰만 가질 수 있다.
+        2. android:fillViewport="true" 무조건 사용해주세요.
+
+
+아이콘 받을수있는 사이트 (png, svg)
+https://freeicons.io/
+
+
+ScollView 특이사항 = 항상주의!!
+안에 자식요소 하나만 넣을수 있다.
+LinearLayout 두개씩 넣는 뻘짓 금지!!
+
+
+
+

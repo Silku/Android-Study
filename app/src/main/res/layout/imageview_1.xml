@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+        src 속성은 source 약자
+        @drawable 폴더 밑에 이미지를 저장한다.
+    -->
+
+    <ImageView
+        android:scaleType="center"
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:src="@drawable/images" />
+
+</LinearLayout>
