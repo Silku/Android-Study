@@ -187,15 +187,26 @@ heap메모리 영역에 new로 생성시킨 인스턴스들이 할당됨.
 ============================================
 day3
 Frame layout
+        Frame Layout은 자식뷰를 겹치게 만들수 있다.
+
+        부모 레이아웃이 리니어 레이아웃이면 자식뷰들은 절대 겹칠수 없다.
+
+------
+        렐러티브 레이아웃도 뷰를 겹칠 수 있다.
+        상대적으로 위치를 계산하기 때문에 메모리에 낭비가 많다.
+        가능하면 framelayout으로 사용하기를 권장
+
+
+
 우측 하단 Layout inspector 버튼
 --> 3d로 프레임레이아웃 겹친 형태를 볼수있음
 
 
-layout gravity =center 부모를기준으로 가우네정렬
+layout gravity =center 부모를기준으로 가운데 정렬
 
 
 plugins
---> 작업창에서 shift 2번
+--> 작업창에서 shift 2번(!!)
 android-drawable-importer-intellij-plugin-0.5-81
 지원안해서 
 android drawable importer plugin not found
@@ -232,4 +243,172 @@ LinearLayout 두개씩 넣는 뻘짓 금지!!
 
 
 
+============================================
+day4
 
+shift + enter 커서줄바꿈
+
+------
+AndroidManifest.xml 앱에서 어떤역할을하는지 정의되있는 파일? 
+	
+	<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    	package="com.example.myapplication">
+
+	<application
+       	android:allowBackup="true"
+      	android:icon="@mipmap/ic_launcher"
+        	android:label="@string/app_name"
+        	android:roundIcon="@mipmap/ic_launcher_round"
+        	android:supportsRtl="true"
+        	android:theme="@style/Theme.MyApplication">
+        	<activity
+          	  android:name=".MainActivity"
+              android:exported="true">
+	            <intent-filter>
+              	  <action android:name="android.intent.action.MAIN" />
+
+                	 <category android:name="android.intent.category.LAUNCHER" />
+            	</intent-filter>
+	 </activity>
+    	</application>
+
+	</manifest>	
+
+    안드로이드 패키지 명은 고유한 이름으로 만들어져야 한다.
+
+    package : 회사명, 프로그램명 따위를 나타냄
+    application : 운영체제를 제외한 모든 프로그램
+    allowBackup : 로그인, 좋아요 등을 앱을 지웠다 재설치 할때 일정부분을 다시 불러올 수 있게 해주는 부분 
+    supportsRtl : true이면 문자 등을 왼쪽에서 오른쪽으로 (역방향으로 문자읽는 나라등을 고려)
+    exported -> 다른앱이나 시스템에서 해당 서비스를 access 할 수 있음을 의미 (보안적인 부분)
+
+
+----
+java(generated) : 안드스튜디오에서 자동으로 만들어주는 파일들
+res : 리소스파일들 
+	drawable : 그림이나 이미지 등등
+	layout : 페이지(view)
+	mipmap : 아이콘 로고같은것
+	values : 변수와 값등 지정해서 사용자가 쓸수있는거
+Gradle Scripts : 
+	build.gradle 의존성 주입활용, 프로젝트 단위로 앱을 사용하거나 할떄 필요...
+
+------------------------------------------------------------------------------------
+빌드.그래들 내부 코드 해설
+
+	android {
+    compileSdk 31 // 마지막에 컴파일 할 때 해당 버전 기준으로 (기계어로) 바꾼다.
+
+    defaultConfig {
+        applicationId "com.example.myactivity_1" // 유니크, 고유해야함.
+        minSdk 24   // 우리가 만든 앱을 설치하려면 그 핸드폰 기종에 os는 24버전 이상이어야 함을 명시
+        targetSdk 31 // 현재 빌드 버전
+        versionCode 1   //업데이트할떄 버전코드와 버전네임을 올려줌.
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //테스트할때 런하는 기능
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        //릴리즈, debug 등 사용. 여기서 proguard는 코드를 난독화하는 기능.
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+//우리 앱에서 사용하는 의존성을 추가하거나 (기능, 라이브러리) 삭제하고 확인할 수 있음.
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
+------------------------------------------------------------------------------------
+
+
+ctrl + o 사용가능한 메서드검색
+ctrl + p ()안에 들어가는거 검색
+
+logcat
+로그 메세지를 보여주는데 클릭하면 하위것으로 내려감 
+verbose 전부
+warn 부터 asset까지 등등
+
+edit filter configuration
+원하는 로그만 볼수 있도록 필터지정 가능
+
+
+-----------------------------------------------------------------------------------
+액티비티 라이프사이클
+https://developer.android.com/guide/components/activities/activity-lifecycle
+
+01.Activity
+    - 앱의 한 화면이다.
+    - 첫 화면에서 다른 화면으로 넘어간다는 것은 activity가 바뀐다.
+    - Life Cycle(수명주기) : 즉, activity의 생성과 소멸.
+    - 콜백 : 특정한 동작이 발생되면 다시 알려준다.
+
+  = activity 핵심 6가지 콜백
+  onCreate(), onStart(), onResume(), onPause(), onStop(), onDestroy()
+
+
+  onCreate()
+  -> activity가 만들어 질때 단 한번만 호출된다.
+  -> 단 한번만 해야되는 작업들을 여기서 해준다.
+
+
+  onStart()
+   -> 호출이 되면 화면이 사용자에게 표시되고 foreGround에 보내
+      사용자와 상호작용을 할 수 있도록 준비한다.
+
+   onResume()
+    -> 화면이 전부 올라왔을때
+    -> activity가 다시 호출 될 때 하면 되는 작업들을 여기에서 해 준다.
+
+    onPause()
+    -> 화면의 일부가 가려졌을 때 호출된다.
+
+    onStop()
+     -> 화면 전부가 보이지 않을때
+     -> 임시데이터를 저장해 놓을 수 있다.
+
+     onDestroy()
+     -> 사용자가 화면을 닫거나 finish가 호출 되어 종료되는 경우
+     -> 구성 변경 상태(기기 회전 또는 멀티 윈도우 모드)로 인해 시스템이 일시적으로 화면을 소멸시키는 경우
+
+ : 특정 동작에 맞는 코드를 작성해 주어야한다.
+
+ onPause와 onStop 상태는 정확하게 구분짓기 어렵다. (디바이스마다 상태가 다를수도 있음)
+ 관련 동작 기능을 만들때 가능한 한 곳에서 작업을 하게 하는것이 좋다.
+---------------------------------------------------------------------------------
+
+갑자기 자바 잠깐
+
+TextView tvHello = findViewById(R.id.tvHello);
+
+TextView는 기본타입(String, int, double 등)
+tvHellow는 참조타입(주소값이 담김)
+
+---------------------------------------------------------------------------------
+
+ctrl +d 라인복사 
+
+
+============================================
+day5
+
+안드로이드에서 필요한 자바개념
+추상메서드 
+템플릿메서드 (프레임워크에서 사용되는 개념)
+쓰레드
+싱크로나이즈

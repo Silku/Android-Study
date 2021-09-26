@@ -10,7 +10,7 @@
     -->
 
     <ImageView
-        android:scaleType="center"
+        android:scaleType="centerCrop"
         android:layout_width="160dp"
         android:layout_height="90dp"
         android:src="@drawable/images" />
