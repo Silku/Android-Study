@@ -25,6 +25,7 @@ public class Calculator extends AppCompatActivity {
     TextView multi;
     TextView div;
     TextView result;
+    TextView equal;
     String newValue = "0";
     String oldValue = "0";
 
@@ -53,6 +54,7 @@ public class Calculator extends AppCompatActivity {
         multi = findViewById(R.id.multi);
         div = findViewById(R.id.div);
         result = findViewById(R.id.result);
+        equal = findViewById(R.id.equal);
     }
 
     private void addEventListener(){
@@ -227,6 +229,20 @@ public class Calculator extends AppCompatActivity {
         });
 
         div.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                int preNum = Integer.parseInt(oldValue);
+                int nextNum = Integer.parseInt(newValue);
+                Log.d("TAG", preNum+"");
+                Log.d("TAG", nextNum+"");
+                int sum = (preNum%nextNum);
+                oldValue = String.valueOf(sum);
+                newValue = "0";
+                result.setText(oldValue);
+            }
+        });
+        equal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

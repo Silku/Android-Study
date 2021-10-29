@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:background="@color/black"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
         <ImageView
-            android:layout_margin="15dp"
-            android:layout_gravity="center"
-            android:src="@drawable/youtube_logo"
             android:layout_width="48dp"
-            android:layout_height="48dp"/>
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
+            android:src="@drawable/youtube_logo" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,16 +27,16 @@
     </LinearLayout>
 
     <ScrollView
-        android:scrollbars="none"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
-        android:background="#BEBEBE">
+        android:background="#BEBEBE"
+        android:scrollbars="none">
 
         <LinearLayout
-            android:layout_margin="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:orientation="vertical">
 
             <FrameLayout
@@ -44,28 +44,27 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:scaleType="centerCrop"
                     android:layout_width="380dp"
                     android:layout_height="300dp"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/cat1"></ImageView>
 
                 <TextView
-                    android:gravity="center"
-                    android:layout_margin="15dp"
-                    android:background="@color/black"
-                    android:layout_gravity="bottom|right"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
+                    android:layout_gravity="bottom|right"
+                    android:layout_margin="15dp"
+                    android:background="@color/black"
+                    android:gravity="center"
                     android:text="10:35"
                     android:textColor="@color/white" />
-
             </FrameLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -74,25 +73,23 @@
                     android:src="@drawable/prof_image" />
 
                 <LinearLayout
-                    android:layout_marginLeft="10dp"
-
-                    android:layout_gravity="center"
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="제목입니다"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
                     <TextView
-                        android:text="부제목입니다"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-
+                        android:layout_height="wrap_content"
+                        android:text="부제목입니다" />
                 </LinearLayout>
 
 
@@ -103,28 +100,28 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:scaleType="centerCrop"
                     android:layout_width="380dp"
                     android:layout_height="300dp"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/cat2"></ImageView>
 
                 <TextView
-                    android:gravity="center"
-                    android:layout_margin="15dp"
-                    android:background="@color/black"
-                    android:layout_gravity="bottom|right"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
+                    android:layout_gravity="bottom|right"
+                    android:layout_margin="15dp"
+                    android:background="@color/black"
+                    android:gravity="center"
                     android:text="10:35"
                     android:textColor="@color/white" />
 
             </FrameLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -133,23 +130,24 @@
                     android:src="@drawable/prof_image" />
 
                 <LinearLayout
-                    android:layout_marginLeft="10dp"
-
-                    android:layout_gravity="center"
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="제목입니다"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
                     <TextView
-                        android:text="부제목입니다"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:text="부제목입니다" />
 
 
                 </LinearLayout>
@@ -162,28 +160,28 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:scaleType="centerCrop"
                     android:layout_width="380dp"
                     android:layout_height="300dp"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/water"></ImageView>
 
                 <TextView
-                    android:gravity="center"
-                    android:layout_margin="15dp"
-                    android:background="@color/black"
-                    android:layout_gravity="bottom|right"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
+                    android:layout_gravity="bottom|right"
+                    android:layout_margin="15dp"
+                    android:background="@color/black"
+                    android:gravity="center"
                     android:text="10:35"
                     android:textColor="@color/white" />
 
             </FrameLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -192,23 +190,24 @@
                     android:src="@drawable/prof_image" />
 
                 <LinearLayout
-                    android:layout_marginLeft="10dp"
-
-                    android:layout_gravity="center"
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="제목입니다"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
                     <TextView
-                        android:text="부제목입니다"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:text="부제목입니다" />
 
 
                 </LinearLayout>
@@ -221,28 +220,28 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:scaleType="centerCrop"
                     android:layout_width="380dp"
                     android:layout_height="300dp"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/images"></ImageView>
 
                 <TextView
-                    android:gravity="center"
-                    android:layout_margin="15dp"
-                    android:background="@color/black"
-                    android:layout_gravity="bottom|right"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
+                    android:layout_gravity="bottom|right"
+                    android:layout_margin="15dp"
+                    android:background="@color/black"
+                    android:gravity="center"
                     android:text="10:35"
                     android:textColor="@color/white" />
 
             </FrameLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -251,32 +250,31 @@
                     android:src="@drawable/prof_image" />
 
                 <LinearLayout
-                    android:layout_marginLeft="10dp"
-
-                    android:layout_gravity="center"
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="제목입니다"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
                     <TextView
-                        android:text="부제목입니다"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:text="부제목입니다" />
 
 
                 </LinearLayout>
-
 
             </LinearLayout>
 
         </LinearLayout>
-
 
     </ScrollView>
 

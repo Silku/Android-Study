@@ -1,7 +1,6 @@
 day01(09/15)
 
-김근호 
-010 5277 0535 
+김근호 강사님
 
 플러터
 
@@ -155,6 +154,9 @@ android:layout_toRightOf="@+id/view5" 기준 오른쪽으로 배치
 타겟 누르고 보면 String.xml에 변수처럼 지정된거있음
 
 
+R.id...
+R은 resource의 약자
+
 
 레이아웃 더 배울거
 프레임
@@ -242,6 +244,13 @@ ScollView 특이사항 = 항상주의!!
 LinearLayout 두개씩 넣는 뻘짓 금지!!
 
 
+drawable
+rectangle 직사각형
+oval 원형
+
+drawble의 속성
+solid 
+size
 
 ============================================
 day4
@@ -412,3 +421,746 @@ day5
 템플릿메서드 (프레임워크에서 사용되는 개념)
 쓰레드
 싱크로나이즈
+
+
+============================================
+day6
+
+안드로이드 단축키
+ctrl shift 왼쪽방향키 : 블록지정
+ctrl alt m : 안드로이드 스튜디오에서 자동으로 메서드를 만드는 기능
+shift + f6 : rename 단축키
+
+자바
+substring
+    if(newValue.length() > 15){
+            newValue = newValue.substring(0, 15);
+            //substring 문자열의 index를 지정하는 메서드(?)
+        }
+
+02.Intent
+
+ - 의도 (요구, 의사전달, 요청)
+ - 요청 관계
+    - Activity와 activity간에 요청하고 전달 받을수 있다.
+    - android system과 내 app이 의사소통할 일이 있을 때 ( 배민에서 전화기능 같은것)
+
+
+ - 요청의 종류
+    - 전달만 하는 요청
+    - 전달하고 리턴을 받은 요청
+
+ - 인텐트 종료
+    - 명시적 인텐트 Explicit  : 정확한 대상에게 요청
+    - 암시적 인텐트 Implicit  : 할 수 있는 대상에게 요청
+
+
+BMI
+키제곱/나누기
+
+
+=============================================================
+day7
+
+안드로이드 단축키
+alt 1,2,3 등 : 작업레이아웃 변경
+alt enter : 하드코딩 변수설정
+
+자바 단축키 : 
+변수위 ctrl + T  : 계층구조 확인 단축키 
+
+
+Toast 메서드
+
+리팩토링 : 성능과 관계없이 코드를 간결하게 만드는 작업.
+
+
+
+03. Task
+
+: intent가 전환될 때 햄버거 처럼 위로 쌓인다.
+
+- Stack
+    - 아래에서 위로 쌓이는 것.
+
+                                                         (2가지 경우)
+A --> B ---> C ---> (뒤로가기) -----> B(A화면을 요청) ---> A ----> A
+      A      B                       A                   B       B
+             A                                           A
+
+옵션을 설정할 수 있다.(켜지는 방법을 자체 속성으로 설정할 수 있다.
+
+--> launchMode
+--> IntentFlag
+
+
+
+LaunchMode          || 다중허용
+
+- standard          ||  ㅇ(허용)
+- singleTop         ||  조건부 -> o/x
+----------------------------------------------
+- singleTask        || x
+- singleInstance    || x
+
+
+
+인텐트 플래그
+FLAG_ACTIVITY_NEW_TASK
+FLAG_ACTIVITY_SING_TOP
+.....
+
+
+결론 :
+액티비티라는 것은 것은 결국 Stack 구조로 관리가 된다.
+LaunchMode를 활용해서 설정할 수도 있다.(인텐트 플래그)
+
+가장 좋은 방법은 기본모드로 사용하는 것이 좋다.
+(사용자도 UX관점으로 자연스럽게 이해할 수 있다.)
+
+
+
+
+=============================================================
+day8
+안드로이드 단축키
+crtl shift enter : 세미콜론 자동으로 찍어줌
+
+Constraint Layout
+https://developer.android.com/training/constraint-layout?hl=ko
+
+제약조건
+가중치	
+체인이 있는 선형 그룹 제어
+
+Top , Bottom, Start, End로 4방향을 제어할 수 있음.
+(html.css에서 쓰던 left, right가 아님)
+
+lcss
+layout_constraintStart_toStartOf
+
+
+app:layout_constraintVertical_bias="0.3"
+수직 비율 가중치 지정할수 있음 : 0.0 ~ 1
+
+app:layout_constraintHorizontal_chainStyle="spread"
+spread 체인간 여백남김
+spread_inside 양끝정렬(?)
+packed 체인간 완전 붙임
+
+
+android:visibility="gone"
+gone : 안보임
+invisible : 안보이 되, 공간은 차지함
+visible : 보임
+
+
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+	schema . app android의 확장 속성가져오는거
+	schema . tools 개발화면에서만 보이게만드는 속성
+
+=============================================================
+day9
+안드로이드 단축키 
+shift f6 : 리네임 단축키
+
+
+SharedPreferences - 보통 초기 설정값이나 자동로그인 여부 등 간단한 값을 저장하기 위해 사용한다.
+보이지않는 '파일'	
+https://humble.tistory.com/9
+
+디자인패턴 - Builder
+
+
+=============================================================
+day10
+
+이중 if 문
+
+values / themes.xml
+액션바 스타일을 정의할 수 있는 xml
+
+
+자바
+(쓰레드)
+
+하나의 프로세스는 하나 이상의 Thread를 가지게 되고 실제 작업을 수행하는 단위는 thread이다.
+컴퓨터가 쓰레드를 통해 cpu의 연산을 굉장히 빠르게 사용함으로써 사용자는 작업이 동시에 처리되는것처럼 느낌
+
+
+	/*
+	 * Thread란?
+	 * 
+	 * process : 프로그램이 실행되면 os로 부터 메모리를 할당받아 프로세스 상태가 됨.
+	 * thread : 하나의 프로세스는 하나이상의 thread를 가지게 되고, 실제로 작업을 수행하는 단위는 thread이다.
+	 * multi threading 
+	 * 여러 thread가 동시에 수행되는 프로그래밍, 즉 여러 작업이 동시에 실행되는 효과
+	 * thread는 각각 자신만의 작업공간을 가진다. (context, 자바)
+	 * 
+	 *각 thread 사이에서 공유하는 자원이 있을 수 있다.
+	 *여러 쓰레드가 자원을 공유하여 작업이 수행되는 경우 서로 자원을 차지하려는
+	 *
+	 * race condition이 발생할 수 있다.(의도하지 않은 결과 생성)
+	 * 자원중에 경쟁이 발생하는 부분을 critical section이라 함(임계 영역)
+	 * critical section에 대한 동기화를 구현하지 않으면 오류가 발생할 수 있다.
+	 * 
+	 * 
+	 */
+
+동기화syshronization
+두개의 thread가 같은 객체에 접근할 경우 동시에 접근함으로써 오류가 발생
+
+
+=============================================================
+day11
+
+안드로이드 단축키
+ctrl + p 들어갈 인자값 확인
+
+--------------------------------------------------------------------------------------
+Fragment
+
+- activity -> 앱에 보이는 한 화면이다.
+
+프래그먼트는 하나의 액티비티가 여러개의 화면을 가지도록 만들기 위해 고안된 개념.
+다양한 크기의 화면을 가진 모바일 환경에 따라서 여러방식으로 화면을 보여주거나,
+하나의 액티비티에 너무 많은 구성 요소들이 있을 때 분리해서 화면을 구성할 수 있다.
+
+용도
+- 액티비티의 파트를 나누어서 책임진다.
+- 라이프사이클이 존재.
+- 액티비티에 종속적
+
+https://developer.android.com/guide/components/fragments?hl=ko
+
+사용방법
+    - xml viewComponent로 추가하는 방법
+    - 코드를 통해 '동적'으로추가하는 방법
+
+데이터 전달 방법
+- Activity -> Fragment : argument와 bundle
+- Fragment -> Activity : 자체 구현 (Callback 메서드 : 리스너 구현해야함)
+
+--------------------------------------------------------------------------------------
+
+
+pc에서의 상수와 리터럴
+상수 : 메모리에 저장되어 변경할수 없는 수
+리터럴 : 우리가 아는 일상생활에서의 상수
+
+
+/* deprecated  : 중간에 줄 그어져 있는 메서드
+추후 업데이트 이후에 더 이상 제공하지 않을 수도 있는 메서드
+
+*/
+
+
+fillViewport : true
+스크롤뷰 쓸때 오류방지 
+
+=============================================================
+day12
+
+안드로이드 단축키
+ctrl + p 들어갈 인자값 확인
+
+라이브러리 
+프레임워크 차이
+: 라이브러리 개발에 필요한 외부 도구들을 가져와 사용하는것.
+:프레임워크 어떠한 방식으로 개발하도록 짜여진 틀
+
+
+
+build.gradle (module)
+glide 프레임워크 사용법
+
+https://bumptech.github.io/glide/
+라이브러리 소스 / document 보기
+
+
+proguard : 소스를 난독화시키는 것
+
+안드로이드 퍼미션
+https://developer.android.com/training/permissions/requesting?hl=ko
+https://developer.android.com/reference/android/Manifest.permission
+
+
+HorizontalScrollView
+
+
+=============================================================
+day13	
+
+안드로이드 단축키
+
+
+
+콜백 메서드
+
+
+
+
+
+리스트 뷰를 그리는 방식 :
+ - 유사하게 반복되는 뷰를 그리는 방법
+
+ addView --> 실제로 리스트 뷰를 그리기 위해서 잘 사용되지는 않는다.
+            이 방식을 이해해야 리스트뷰 또는 리사이클 뷰를 잘 이해할 수 있음.
+
+            Item을 담을 xml 파일을 만들어 준다.
+            Container View에 더해 준다.
+            반복한다.
+
+
+
+ ListView
+ RecycleView
+
+
+------------------------------------------------------------------------------------
+addview 방식
+1. 리스트로 만들고 싶은 아이템의 리스트를 준비한다.
+2. 인플레이터를 준비
+3. 인플레이터로 아이템 하나에 해당하는 뷰를 만듬
+4. 위에서 만든 뷰를 컨테이너 뷰에 붙여줌.
+
+
+ListView 방식
+1. 리스트로 만들고 싶은 아이템의 리스트를 준비
+2. Adapter를 이용한다.(2,3,4)
+
+AddView와 ListView의 차이점
+1.만드는 방식이 다름
+2. 그리는 방식이 다름(가장큰 차이)
+    - addView 방식은 갯수와 상관없이 한번에 다 그린다.
+    - ListView 방식은 보여지는 부분 + 알파만 한번에 그리고 필요한 경우에 더 그린다.
+
+
+ListView의 3가지 구성요소
+1. View - 화면에 보여줄 레이아웃 내에 View 객체를 의미
+2. Item - 화면에 표시할 실실적인 데이터
+3. Adapter - Item(데이터)를 view와 연결해서 뷰(view)를 생성 및 관리하는 객체
+
+
+------------------------------------------------------------------------------------
+
+BaseAdapter
+
+
+    //전체 갯수를 알려준다.
+    @Override
+    public int getCount() {
+        return carArrayList.size();
+    }
+
+    //화면에 표시할 데이터
+    @Override
+    public Object getItem(int i) {
+        return carArrayList.get(i);
+    }
+
+    //해당 item의 position 또는 id
+    @Override
+    public long getItemId(int i) {
+        return i;
+    }
+
+    //그리고자 하는 아이템 리스트가 하나
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+
+    return itemView;
+ }
+
+
+=============================================================
+day14
+
+안드로이드 단축키
+
+애드뷰 
+리스트뷰
+리사이클러 뷰 https://recipes4dev.tistory.com/154
+
+
+1. RecyclerView
+
+장점
+    -ListView의 개선판
+        -ViewHolder 포함
+    - 유연하다
+        - Liner
+        - Grid
+        - StaggerdGrid
+
+2. Context (안드로이드의)
+
+  1. Context의 정의
+
+    애플리케이션 환경에 대한 전역정보를 접근하기 위한 인터페이스.
+    Context를 리소스나 클래스에 접근할 수 있다.
+
+관련글 
+https://www.charlezz.com/?p=1080
+https://velog.io/@ruinak_4127/Context-cr0o0ou5
+
+------------------------------------
+
+
+컨스트레이트 레이아웃 (복습개념)
+layout_constraintVertical_chainStyle 체인스타일
+layout_constraintVertical_bias 수직 위치
+
+
+build.gradle에 
+dependencies
+추가하고 sync now 누를것!
+
+
+
+
+--------------------------------------------------------------------------------------------
+glide는 사용할때 권한 설정해줘야되는데 , AndroidManifest.xml 파일에 아래와 같은 코드를 추가하여 권한을 추가해줘야 된다. 
+
+ <uses-permission android:name="android.permission.INTERNET" /> 
+
+검색어 : 및 참조사이트
+안드로이드 인터넷 권한
+https://slobell.com/blogs/48
+
+
+---------------------
+생활꿀팁
+주소창에 
+github : 
+하고 뒤에 검색어 넣고 검색하면 깃헙위주로 검색을함 와우..
+
+--------------------
+
+
+svm 중앙 저장소 / 중앙집중식에서 회사 컴퓨터가 날라가면 큰일나죠?
+git 분산 저장  / 저장소를 분산하여 원격지향으로 
+깃사용할떄는 : 작업단위별로
+
+
+릴리즈 - 핫픽스
+
+
+
+=============================================================
+day15
+
+안드로이드 단축키 
+변수명 한번에 바꾸기 shift F6	
+
+타이틀 없애기
+themes.xml 
+<style name="Theme.RecylerViewTest1" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+
+------------------------------------------------------------------------
+깃 : 
+https://blog.naver.com/PostView.naver?blogId=devnote1&logNo=222528402587&categoryNo=69&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=&from=postList&userTopListOpen=true&userTopListCount=5&userTopListManageOpen=false&userTopListCurrentPage=1
+
+깃 - 버전관리 시스템
+VCS Version Control System(VCS)은 
+사용자의 프로젝트에 포함된 파일의 변경 사항을 추적할 수 있도록 돕는 방법론이나 도구입니다. 
+가장 단순한 버전 관리 시스템은 작성중인 파일의 복사본을 만들고 파일 이름 뒤에 사용자가 손수 날짜와 시간을 붙여서 관리하는 방법입니다. 
+
+소프트웨어 형상관리
+SW 개발 및 유지보수 과정에서 발생하는 소스코드, 문서, 인터페이스 등 각종 결과물에 대한 형상을 만들고 
+이를 형상에 대한 변경을 체계적으로 관리, 제어 하기 위한 활동 입니다. 
+
+------------------------------------------------------------------------
+
+Git이란 소스코드를 효과적으로 관리하기 위해 개발된 '분산형 버전 관리 시스템'입니다. 
+
+Git에서는 소스 코드의 변경된 이력을 쉽게 확인할 수 있고, 특정 시점에 저장된 버전과 비교하거나 특정 시점으로 되돌아갈 수도 있습니다.
+
+내가 올리려는 파일이 누군가 편집한 내용과 충돌한다면, 서버에 업로드 할 때 경고 메시지가 발생됩니다. 누군가가 애써 편집한 내용을 덮어써버리는 실수는 이제 없겠죠!
+
+
+------------------------------------------------------------------------
+
+버전 관리 시스템 (Version Control System)  
+
+VS 
+
+분산 버전 관리 시스템 (Distributed Version Control System) 
+
+​
+
+▶기존 버전 관리 시스템은 중앙 서버에 소스코드와 history를 직접 저장하는 방식이라면 
+분산 버전 관리 시스템은 여러 개발 PC와 저장소에 분산해서 저장하는 방식입니다. 
+이런 이유로 중앙 서버에 장애가 발생해도 로컬 저장소에서 소스코드나 파일을 원격 저장소로
+ 다시 올리 수 있고  중앙 저장소에 코드나 파일 이력등을 다시 복원할 수 있습니다.
+
+
+GitHub
+마이크로소프트사의 웹 서비스 
+깃허브는 DVCS의 Git 을 기반으로 소스 코드를 호스팅 하고, 
+협업 기능을 지원하는 소스 코드 호스팅 서비스이자 소프트웨어 개발 플랫폼 입니다. 
+호스팅 : 원격컴퓨터를 임대 한다고 생각하면됨.
+
+깃랩을 쓰기도 한다.
+https://about.gitlab.com/
+
+---------------------------------
+Repository
+
+저장소(Git repository) - 파일이나 폴더를 저장해 두는 곳 
+
+
+같은 파일이라도 실제 내용의 일부가 다르면 다른 파일로 인식하기 때문에 
+파일을 변경 사항 별로 구분해서 저장할 수 있는 특징이 있습니다. 
+​
+원격 저장소(Remote Repository): 파일이 원격 저장소 전용 서버에서 관리되며 여러 사람이 함께 공유하기 위한 저장소입니다.
+
+​로컬 저장소(Local Repository): 내 PC에 파일이 저장되는 개인 전용 저장소입니다.
+
+
+---------------------------------
+Git의 세가지 상태 - (논리적 구분)
+
+Working Directory
+Staging Area
+.git directory
+
+변경 내용을 저장소에 바로 기록하는 것이 아니라 그 사이 공간인 Staging Area에 먼저 상태를 기록하게 되어 있습니다
+
+
+---------------------------------
+git init 
+깃 초기화
+
+git status 
+working directory 상태
+
+git add
+staging area에 스테이징 된 상태
+
+git add * 다 스테이징하기
+
+커밋하기
+i 눌러서 
+변경사항 추가 텍스트입력 후 
+esc shift ; 
+wq , enter
+또는 
+git commit -m변경사항추가 메세지(m뒤에 붙여서)
+
+git commit -am 스테이징과 커밋을 한번에 합니다/
+
+---------------------------------
+github에서
+gitignore 환경파일들에 ignore줄수있음.
+
+git log --oneline 
+한줄에 간편하게 보기
+
+
+git reset
+커밋취소 
+
+git reset HEAD^
+꺽쇠 갯수만큼 커밋취소함(?)
+
+rss-keygen 
+엔터누르면 해당경로에 공용키 및 프라이빗 키 생성
+
+이건 퍼블릭키
+C:\Users\82109\.ssh/id_rsa.pub 
+
+프라이빗키
+C:\Users\82109\.ssh/id_rsa
+
+
+=============================================================
+day16
+
+안드로이드 단축키 
+
+
+-----------------------------
+ㄳ추가
+GIt clone  https://github.com/Silku/HelloGit.git
+ls -al 하면 지금 뭐가 변경됬는지 파일목록 볼수있음
+
+git show 변경사항 보기?
+
+
+
+흐름 
+git add 
+git commit -m텍스트
+git push
+git pull
+
+-----------------------------
+git branch
+브랜치 상태보기
+
+git branch feature-signup
+브랜치 생성
+
+git checkout feature-signup
+feature-signup 브랜치로 브랜치 이동
+
+자동완성(tab키)
+; wq 이상한 모드에서 나가기
+
+
+
+----------------------------------
+안드로이드 
+ActionBar -> Toolbar  (상단바 혹은 버튼들)
+----------------------------------
+https://material.io/design
+
+->
+	안드로이드판 부트스트랩 개꿀 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+
+----------------------------------
+ViewPager
+(화면밀어서 넘기는기능)
+
+ViewPager2
+
+TabLayout
+ implementation 'com.google.android.material:material:1.1.0'
+
+----------------------------------
+버전에 대해
+1.1.0 버전이 있을때
+1. 메이저번호(큰변화가 있을때 올림).
+0.1.1 <--마이너 (상위호환 지원)
+
+
+============================================
+day17
+TabLayout
+
+addOnTabSelectedListener
+
+setOnTabSelectedListener  -> deprecated(취소선, 차후)
+
+add -> replace 
+add 사용시는 계속 추가(중첩되는 식)
+replace 교체 
+
+
+viewPager , TabLayout 연결하기(My TabLayoutPager Ex)
+
+build -> analyze APK
+프로가드(apk로 만들었을때 난독화 시켜주는것 
+
+
+
+바텀네비게이션 (My BottomNavi Ex)
+
+app 폴더 우클릭
+Vector Asset
+Clip Art
+
+https://material.io/components/bottom-navigation/android#using-bottom-navigation
+
+
+
+프래그먼트 교체 : 프래그먼트 매니저
+getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.linearLayout, fragment)
+                        .commit();
+
+
+리스트뷰,  리사이클 뷰 -> 어댑터
+
+
+My DrwaLayout Ex
+
+
+리플렉션 프로그래밍 참고 :  https://nam-ki-bok.github.io/java/Java_reflection/
+
+
+
+My Network Ex
+비동기 -> Async
+동기 -> Sync
+
+
+
+
+============================================
+day18
+
+My Network Ex
+네트워크 추가 개념
+
+자바 - object toString, equals등 8개 메서드 있음 (?)
+
+-------------------
+String obj = "ddddd"
+String obj = new String("abc")
+
+뉴를 해줄떄는 힙메모리에 새로 생성되서 적재
+그냥 선언하면 static 메모리에 적재
+
+근데 스태틱 적재 될떄 만일 문자열을 추가한다 ? ex ddddd+e 같은경우에 
+메모리 ddddde를 새로 생성해서 두고 있음.
+그래서 스트링 버퍼 이런 개념이 필요함.
+
+StringBuffer // StringBuilder
+멀티쓰레드 // 단일쓰레드
+
+---------------------
+기반스트림과 보조스트림
+
+!!!!!!!!!!!!!!!!!!!!!Gson 라이브러리!!!!!!!!!!!!!!!!!!!!!
+많이 괜찮은 라이브러리인듯하다
+
+json 파일
+https://www.jsonschema2pojo.org/ 
+
+라이브러리 - 레트로핏2
+
+
+==================================================
+Day19
+
+네트워크 이어서 수업
+
+My Movie Ex
+
+라운드 이미지 뷰
+implementation 'com.makeramen:roundedimageview:2.3.0'
+
+
+툴바 관련 속성
+contentInsetStart 툴바 여백
+elevation 툴바 그림자
+
+String.valueOf || toString 차이
+toString일경우 최상위 클래스인 object 클래스안에있는 toString 메서드를 받음. object를 string 문자열로 재정의 하는거
+String.Valueof 일경우 String 클래스 내에있는 valueof는 float int 등을 받음 어떤값들어오든간에 스트링으로 바꾸는거 ?? 요런느낌
+
+
+
+==================================================
+Day20 
+
+My yst Ex 무비예제를 넷상에서 데이터 받아오는걸로 해봄
+
+안드로이드 단축키 
+ctrl alt O  쓸데없는 임포트 코드 지움;
+ctrl w 블록을잡고 여러번 누를수록 범위가 커짐
+
+
+레트로핏 쓸떄 항상주의할거 url 끝부분에 /닫기 ㅋㅋㅋ 
+
+
+My permission Ex
+안드로이드 카메라 권한에 대해 어떻게 이뤄지는지
+
