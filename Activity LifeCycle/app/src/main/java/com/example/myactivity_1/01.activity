@@ -1,0 +1,41 @@
+액티비티 라이프사이클
+https://developer.android.com/guide/components/activities/activity-lifecycle
+
+01.Activity
+    - 앱의 한 화면이다.
+    - 첫 화면에서 다른 화면으로 넘어간다는 것은 activity가 바뀐다.
+    - Life Cycle(수명주기) : 즉, activity의 생성과 소멸.
+    - 콜백 : 특정한 동작이 발생되면 다시 알려준다.
+
+  = activity 핵심 6가지 콜백
+  onCreate(), onStart(), onResume(), onPause(), onStop(), onDestroy()
+
+
+  onCreate()
+  -> activity가 만들어 질때 단 한번만 호출된다.
+  -> 단 한번만 해야되는 작업들을 여기서 해준다.
+
+
+  onStart()
+   -> 호출이 되면 화면이 사용자에게 표시되고 foreGround에 보내
+      사용자와 상호작용을 할 수 있도록 준비한다.
+
+   onResume()
+    -> 화면이 전부 올라왔을때
+    -> activity가 다시 호출 될 때 하면 되는 작업들을 여기에서 해 준다.
+
+    onPause()
+    -> 화면의 일부가 가려졌을 때 호출된다.
+
+    onStop()
+     -> 화면 전부가 보이지 않을때
+     -> 임시데이터를 저장해 놓을 수 있다.
+
+     onDestroy()
+     -> 사용자가 화면을 닫거나 finish가 호출 되어 종료되는 경우
+     -> 구성 변경 상태(기기 회전 또는 멀티 윈도우 모드)로 인해 시스템이 일시적으로 화면을 소멸시키는 경우
+
+ : 특정 동작에 맞는 코드를 작성해 주어야한다.
+
+ onPause와 onStop 상태는 정확하게 구분짓기 어렵다. (디바이스마다 상태가 다를수도 있음)
+ 관련 동작 기능을 만들때 가능한 한 곳에서 작업을 하게 하는것이 좋다.

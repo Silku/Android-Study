@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ActivityListener">
+
+    <TextView
+        android:background="#99eecc"
+        android:id="@+id/tvHello"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:tag="텍스트 뷰 1"
+        android:text="Hello"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <TextView
+        android:background="#FFEE9A"
+        android:id="@+id/tvHello2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:tag="텍스트 뷰 1"
+        android:text="Hello"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <TextView
+        android:background="#A1F3AB"
+        android:id="@+id/tvHello3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:tag="텍스트 뷰 1"
+        android:text="Hello"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+</LinearLayout>
