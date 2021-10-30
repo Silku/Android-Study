@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">M BmiApp</string>
+    <string name="s_height">신장</string>
+    <string name="s_weight">체중</string>
+    <string name="is_ok">확인하기</string>
+</resources>
